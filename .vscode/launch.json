@@ -1,0 +1,38 @@
+/*
+Because we are attaching to a process in Renderer, 
+it is possible that the first lines of your code will be skipped as the debugger will not have had enough time to connect before they are being executed. 
+
+You can work around this by refreshing the page or setting a timeout before executing the code in development mode.
+*/
+{
+    "version": "0.2.0",
+    "compounds": [
+      {
+        "name": "Main + renderer",
+        "configurations": ["Main", "Renderer"],
+        "stopAll": true
+      }
+    ],
+    "configurations": [
+      {
+        "name": "Renderer",
+        "port": 9222,
+        "request": "attach",
+        "type": "pwa-chrome",
+        "webRoot": "${workspaceFolder}"
+      },
+      {
+        "name": "Main",
+        "type": "pwa-node",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+        "windows": {
+          "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+        },
+        "args": [".", "--remote-debugging-port=9222"],
+        "outputCapture": "std",
+        "console": "integratedTerminal"
+      }
+    ]
+  }

@@ -1,0 +1,22 @@
+{
+  "name": "cac",
+  "version": "1.0.0",
+  "description": "congressional app challenge 2022",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanjiCharmeleon/CAC.git"
+  },
+  "author": "Josh is very cool",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanjiCharmeleon/CAC/issues"
+  },
+  "homepage": "https://github.com/SanjiCharmeleon/CAC#readme",
+  "devDependencies": {
+    "electron": "^21.0.1"
+  }
+}
